@@ -1,0 +1,9 @@
+.pagecontainer {
+    display: block;
+    box-sizing: border-box;
+}
+
+
+.note-container {
+    margin: 10px;
+}
