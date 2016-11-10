@@ -1,4 +1,4 @@
-This TYPO3 extension brings back sysnotes to the page module. Tested with TYPO3 6.2 and Templavoila 1.9.8
+This TYPO3 extension brings back sysnotes to the page module. Tested with TYPO3 7.6 and our fork from templavoila https://github.com/pluspol-interactive/templavoila
 
 Clone this repository to typo3conf/ext/ppi_templavoila_notes:
 
