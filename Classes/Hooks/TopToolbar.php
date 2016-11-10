@@ -29,12 +29,14 @@ namespace Ppi\PpiTemplavoilaNotes\Hooks;
  */
 class TopToolbar
 {
-    public function render(array $params = array(), $parentObject)
+    public function render(array $params = array(), \Extension\Templavoila\Controller\BackendLayoutController $parentObject)
     {
 
         $cssPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('ppi_templavoila_notes');
         $cssPath .= 'Resources/Public/Css/notes.css';
-        $parentObject->doc->getPageRenderer()->addCssFile($GLOBALS['BACK_PATH'] . $cssPath);
+
+        $pageRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
+        $pageRenderer->addCssFile($GLOBALS['BACK_PATH'] . $cssPath);
 
         $content = '<div class="note-container">';
 
