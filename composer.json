@@ -1,0 +1,22 @@
+{
+    "name": "ppi/ppi-templavoila-notes",
+    "description": "PLUSPOL ppi_templavoila_notes",
+    "type": "typo3-cms-extension",
+    "license": [
+        "GPL-2.0+"
+    ],
+    "authors": [
+        {
+            "name": "PLUSPOL",
+            "email": "typo3@pluspol-interactive.de"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^7.6.0 || ^7.6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ppi\\PpiTemplavoilaNotes\\": "Classes/"
+        }
+    }
+}
