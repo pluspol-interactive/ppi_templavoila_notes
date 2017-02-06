@@ -29,7 +29,7 @@ namespace Ppi\PpiTemplavoilaNotes\Hooks;
  */
 class TopToolbar
 {
-    public function render(array $params = array(), \Extension\Templavoila\Controller\BackendLayoutController $parentObject)
+    public function render(array $params = [], \Extension\Templavoila\Controller\BackendLayoutController $parentObject)
     {
 
         $cssPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('ppi_templavoila_notes');
@@ -42,10 +42,9 @@ class TopToolbar
 
         /** @var $noteBootstrap \TYPO3\CMS\SysNote\Core\Bootstrap */
         $noteBootstrap = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\SysNote\\Core\\Bootstrap');
-        $content .= $noteBootstrap->run('Note', 'list', array('pids' => $parentObject->id));
+        $content .= $noteBootstrap->run('Note', 'list', ['pids' => $parentObject->id]);
         $content .= '</div>';
 
         return $content;
     }
-
 }

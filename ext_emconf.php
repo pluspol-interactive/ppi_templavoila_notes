@@ -10,27 +10,27 @@
  * "version" and "dependencies" must not be touched!
  ***************************************************************/
 
-$EM_CONF[$_EXTKEY] = array(
-	'title' => 'Templavoila Notes',
-	'description' => 'Show sys_note records in Templavoila page module',
-	'category' => 'plugin',
-	'author' => 'Andreas Kießling',
-	'author_email' => 'kiessling@pluspol-interactive.de',
-	'state' => 'alpha',
-	'internal' => '',
-	'uploadfolder' => '0',
-	'createDirs' => '',
-	'clearCacheOnLoad' => 0,
-	'version' => '',
-	'constraints' => array(
-		'depends' => array(
-			'typo3' => '7.6.0-7.6.99',
-			'sys_note' => '7.6.0-7.6.99',
-			'templavoila' => ''
-		),
-		'conflicts' => array(
-		),
-		'suggests' => array(
-		),
-	),
-);
+$EM_CONF[$_EXTKEY] = [
+    'title' => 'Templavoila Notes',
+    'description' => 'Show sys_note records in Templavoila page module',
+    'category' => 'plugin',
+    'author' => 'Andreas Kießling',
+    'author_email' => 'kiessling@pluspol-interactive.de',
+    'state' => 'alpha',
+    'internal' => '',
+    'uploadfolder' => '0',
+    'createDirs' => '',
+    'clearCacheOnLoad' => 0,
+    'version' => '',
+    'constraints' => [
+        'depends' => [
+            'typo3' => '7.6.0-7.6.99',
+            'sys_note' => '7.6.0-7.6.99',
+            'templavoila' => ''
+        ],
+        'conflicts' => [
+        ],
+        'suggests' => [
+        ],
+    ],
+];
