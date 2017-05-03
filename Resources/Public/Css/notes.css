@@ -1,9 +1,7 @@
-.pagecontainer {
-    display: block;
-    box-sizing: border-box;
+.note-container {
+    margin-bottom: 5px;
 }
 
-
-.note-container {
-    margin: 10px;
+.note-container h2 {
+    margin-top: 0;
 }

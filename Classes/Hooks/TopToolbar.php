@@ -21,6 +21,11 @@ namespace Ppi\PpiTemplavoilaNotes\Hooks;
  *  This copyright notice MUST APPEAR in all copies of the script!
  */
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
+use Ppi\TemplaVoilaPlus\Controller\BackendLayoutController;
+
 /**
  * Class to add sys notes to the templavoila page module
  * Uses the renderTopToolbar hook
@@ -29,21 +34,20 @@ namespace Ppi\PpiTemplavoilaNotes\Hooks;
  */
 class TopToolbar
 {
-    public function render(array $params = [], \Extension\Templavoila\Controller\BackendLayoutController $parentObject)
+    public function render(array $params, BackendLayoutController $parentObject)
     {
-
-        $cssPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('ppi_templavoila_notes');
-        $cssPath .= 'Resources/Public/Css/notes.css';
-
-        $pageRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
-        $pageRenderer->addCssFile($GLOBALS['BACK_PATH'] . $cssPath);
-
-        $content = '<div class="note-container">';
-
         /** @var $noteBootstrap \TYPO3\CMS\SysNote\Core\Bootstrap */
-        $noteBootstrap = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\SysNote\\Core\\Bootstrap');
-        $content .= $noteBootstrap->run('Note', 'list', ['pids' => $parentObject->id]);
-        $content .= '</div>';
+        $noteBootstrap = GeneralUtility::makeInstance(\TYPO3\CMS\SysNote\Core\Bootstrap::class);
+        $content = $noteBootstrap->run('Note', 'list', ['pids' => $parentObject->id]);
+
+        if ($content) {
+            $content = '<div class="note-container">' . $content . '</div>';
+
+
+            $resourcePath = ExtensionManagementUtility::extRelPath('ppi_templavoila_notes') . 'Resources/Public/';
+            $pageRenderer = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
+            $pageRenderer->addCssFile($resourcePath . 'Css/notes.css');
+        }
 
         return $content;
     }
