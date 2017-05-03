@@ -20,4 +20,9 @@ $EM_CONF[$_EXTKEY] = [
             'templavoilaplus' => '7.0.5-'
         ],
     ],
+    'autoload' => [
+        'psr-4' => [
+            'Ppi\\PpiTemplavoilaNotes\\' => 'Classes/',
+        ],
+    ],
 ];
