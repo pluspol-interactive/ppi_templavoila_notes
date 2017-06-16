@@ -32,9 +32,9 @@ use Ppi\TemplaVoilaPlus\Controller\BackendLayoutController;
  *
  * @author Andreas Kießling <kiessling@pluspol-interactive.de>
  */
-class TopToolbar
+class RenderHook
 {
-    public function render(array $params, BackendLayoutController $parentObject)
+    public function renderHeaderFunctionHook(array $params, BackendLayoutController $parentObject)
     {
         /** @var $noteBootstrap \TYPO3\CMS\SysNote\Core\Bootstrap */
         $noteBootstrap = GeneralUtility::makeInstance(\TYPO3\CMS\SysNote\Core\Bootstrap::class);

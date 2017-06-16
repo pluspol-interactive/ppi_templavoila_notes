@@ -7,7 +7,7 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'Alexander Opitz',
     'author_email' => 'alexander.opitz@pluspol-interactive.de',
     'author_company' => 'PLUSPOL interactive',
-    'state' => 'beta',
+    'state' => 'stable',
     'internal' => '',
     'uploadfolder' => '0',
     'createDirs' => '',
@@ -17,7 +17,7 @@ $EM_CONF[$_EXTKEY] = [
         'depends' => [
             'typo3' => '7.6.0-7.6.99',
             'sys_note' => '7.6.0-7.6.99',
-            'templavoilaplus' => '7.0.5-'
+            'templavoilaplus' => '7.1.2-'
         ],
     ],
     'autoload' => [
