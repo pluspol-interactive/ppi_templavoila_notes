@@ -1,7 +1,7 @@
 <?php
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'TemplaVoilà Plus - Notes',
+    'title' => 'TemplaVoila Plus - Notes',
     'description' => 'Show sys_note records in TemplaVoilà Plus page module',
     'category' => 'plugin',
     'author' => 'Alexander Opitz',
