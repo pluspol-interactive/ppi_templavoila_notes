@@ -1,5 +1,5 @@
-TemplaVoilà Plus - Notes
-========================
+TemplaVoilà! Plus - Notes
+=========================
 
 [![license](https://img.shields.io/github/license/pluspol-interactive/typo3-ppi_templavoila_notes.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html)
 [![version](https://img.shields.io/badge/TER_version-0.2.0-green.svg)](https://typo3.org/extensions/repository/view/ppi_templavoila_notes)
