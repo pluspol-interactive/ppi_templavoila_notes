@@ -1,9 +1,9 @@
 <?php
 $EM_CONF[$_EXTKEY] = [
     'title' => 'TemplaVoila! Plus - Notes',
-    'description' => 'Show sys_note records in TemplaVoilà Plus page module',
+    'description' => 'Show sys_note records in TemplaVoilà! Plus page module',
     'category' => 'plugin',
-    'version' => '0.3.0-dev',
+    'version' => '0.3.0',
     'state' => 'stable',
     'uploadfolder' => '0',
     'clearCacheOnLoad' => 0,
