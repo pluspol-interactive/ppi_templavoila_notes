@@ -1,6 +1,9 @@
 .note-container {
     margin-bottom: 5px;
 }
+.note-container-bottom {
+    margin-top: 5px;
+}
 
 .note-container h2 {
     margin-top: 0;

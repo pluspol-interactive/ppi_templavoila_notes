@@ -34,17 +34,54 @@ use Ppi\TemplaVoilaPlus\Controller\BackendLayoutController;
  */
 class RenderHook
 {
+    /**
+     * Render inside Footer
+     *
+     * @var array $params
+     * @var BackendLayoutController $parentObject The TV+ BackendLayoutController
+     */
     public function renderHeaderFunctionHook(array $params, BackendLayoutController $parentObject)
     {
-        /** @var $noteBootstrap \TYPO3\CMS\SysNote\Core\Bootstrap */
-        $noteBootstrap = GeneralUtility::makeInstance(\TYPO3\CMS\SysNote\Core\Bootstrap::class);
-        $content = $noteBootstrap->run('Note', 'list', ['pids' => $parentObject->id]);
-
+        if (version_compare(TYPO3_version, '9.4.0', '>=')) {
+            $controller = GeneralUtility::makeInstance(\TYPO3\CMS\SysNote\Controller\NoteController::class);
+            $content = $controller->listAction($parentObject->id, \TYPO3\CMS\SysNote\Domain\Repository\SysNoteRepository::SYS_NOTE_POSITION_TOP);
+        } else {
+            /** @var $noteBootstrap \TYPO3\CMS\SysNote\Core\Bootstrap */
+            $noteBootstrap = GeneralUtility::makeInstance(\TYPO3\CMS\SysNote\Core\Bootstrap::class);
+            $content = $noteBootstrap->run('Note', 'list', ['pids' => $parentObject->id]);
+        }
         if ($content) {
             $content = '<div class="note-container">' . $content . '</div>';
 
 
-            $resourcePath = ExtensionManagementUtility::extRelPath('ppi_templavoila_notes') . 'Resources/Public/';
+            $resourcePath = ExtensionManagementUtility::extPath('ppi_templavoila_notes') . 'Resources/Public/';
+            $pageRenderer = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
+            $pageRenderer->addCssFile($resourcePath . 'Css/notes.css');
+        }
+
+        return $content;
+    }
+
+    /**
+     * Render inside Footer
+     *
+     * @var array $params
+     * @var BackendLayoutController $parentObject The TV+ BackendLayoutController
+     */
+    public function renderFooterFunctionHook(array $params, BackendLayoutController $parentObject)
+    {
+        // Since v9LTS sys_notes we can use them on top or bottom
+        if (version_compare(TYPO3_version, '9.4.0', '>=')) {
+            $controller = GeneralUtility::makeInstance(\TYPO3\CMS\SysNote\Controller\NoteController::class);
+            $content =  $controller->listAction($parentObject->id, \TYPO3\CMS\SysNote\Domain\Repository\SysNoteRepository::SYS_NOTE_POSITION_BOTTOM);
+        } else {
+            $content =  '';
+        }
+        if ($content) {
+            $content = '<div class="note-container-bottom">' . $content . '</div>';
+
+
+            $resourcePath = ExtensionManagementUtility::extPath('ppi_templavoila_notes') . 'Resources/Public/';
             $pageRenderer = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
             $pageRenderer->addCssFile($resourcePath . 'Css/notes.css');
         }
