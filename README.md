@@ -11,5 +11,5 @@ Install this from TER https://extensions.typo3.org/extension/ppi_templavoila_not
 or clone this repository to typo3conf/ext/ppi_templavoila_notes:
 
 ```
-git clone https://github.com/pluspol-interactive/typo3-ppi_templavoila_notes.git ppi_templavoila_notes
+git clone https://github.com/pluspol-interactive/ppi_templavoila_notes.git
 ```
