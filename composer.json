@@ -1,0 +1,35 @@
+{
+    "name": "templavoilaplus/ppi_templavoila_notes",
+    "type": "typo3-cms-extension",
+    "description": "Show sys_note records in TemplaVoilà! Plus page module.",
+    "keywords": [
+        "TYPO3",
+        "extension",
+        "TemplaVoila"
+    ],
+    "homepage": "https://templavoila.plus/",
+    "license": ["GPL-2.0+"],
+    "authors": [
+        {
+            "name": "Alexander Opitz",
+            "email": "opitz@pluspol-interactive.de",
+            "homepage": "http://www.pluspol-interactive.de",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^7.6.0 || ^8.7.0 || ^9.5.0",
+        "typo3/cms-sys-note": "^7.6.0 || ^8.7.0 || ^9.5.0",
+        "templavoilaplus/templavoilaplus": ">=7.1.2 <7.99.99",
+        "php": ">=5.5.0 <7.3.99"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ppi\\PpiTemplavoilaNotes\\": "Classes/"
+        }
+    },
+    "replace": {
+        "ppi_templavoila_notes": "self.version",
+        "typo3-ter/ppi_templavoila_notes": "self.version"
+    }
+}
